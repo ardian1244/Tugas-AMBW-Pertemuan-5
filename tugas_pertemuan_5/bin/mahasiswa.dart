@@ -1,12 +1,19 @@
 import 'user.dart';
 
 class Mahasiswa extends User{
+  String nrp="";
   int sks = 0;
   String status = "aktif";
-  int ips =0;
-  int ipk=0;
+  double ips =0;
+  double ipk=0;
 
-  Mahasiswa(String? nama, int umur) : super(nama, umur);
+  Mahasiswa(String? nama, int umur, int _sks, String stat, double _ips, double _ipk, String _nrp) : super(nama, umur){
+    this.sks=_sks;
+    this.status=stat;
+    this.ips=_ips;
+    this.ipk=_ipk;
+    this.nrp=_nrp;
+  }
 
   set Sks(int x){
     sks=x;
@@ -14,10 +21,10 @@ class Mahasiswa extends User{
   set Status(String x){
     status=x;
   }
-  set Ips(int x){
+  set Ips(double x){
     ips=x;
   }
-  set Ipk(int x){
+  set Ipk(double x){
     ipk=x;
   }
 
@@ -28,10 +35,10 @@ class Mahasiswa extends User{
   String get Status{
     return status;
   }
-  int get Ips{
+  double get Ips{
     return ips;
   }
-  int get Ipk{
+  double get Ipk{
     return ipk;
   }
 }
