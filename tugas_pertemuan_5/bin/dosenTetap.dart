@@ -1,8 +1,7 @@
+import 'dosen.dart';
 import 'pegawai.dart';
 
-class DosenTetap extends Pegawai{
+class DosenTetap extends Dosen{
 //gaji dasar & tunjangan kehadiran & sks
-  int gaji_sks=0;
-
-  DosenTetap(String? nama, int umur) : super(nama, umur);
+  DosenTetap(String? nama, int umur, int dasar, int tot, int tunj, int sks) : super(nama, umur, dasar, tot, tunj, sks);
 }

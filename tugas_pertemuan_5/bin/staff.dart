@@ -1,29 +1,36 @@
+import 'pegawai.dart';
 import 'user.dart';
 
-class Staff extends User{
-  int plus_tunjangan=0;
+class Staff extends Pegawai{
+  int plus_tunjangan=10000;
   int sisa_cuti=12;
-  String stat_absen="0";
+  int stat_absen=0;
 
-  Staff(String? nama, int umur) : super(nama, umur);
+  Staff(String? nama, int umur, int dasar, int tot, int tunj) : super(nama, umur, dasar, tot, tunj);
 
   set Plus_Tunjangan(int x){
     plus_tunjangan=x;
   }
   set Sisa_Cuti(int x){
-    sisa_cuti=x;
+    sisa_cuti-=x;
   }
-  set Stat_Absen(String x){
+  set Stat_Absen(int x){
     stat_absen=x;
   }
 
-  int get Plus_Tunjangan{
-    return plus_tunjangan;
+  addabsen(){
+    stat_absen+=1;
+    print("Absen berhasil");
   }
+
   int get Sisa_cuti{
     return sisa_cuti;
   }
-  String get Stat_Absen{
+  int get Stat_Absen{
     return stat_absen;
+  }
+  int get GetStaffPenghasilan{
+    total_penghasilan=gaji_dasar+(stat_absen*plus_tunjangan);
+    return total_penghasilan;
   }
 }
